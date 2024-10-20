@@ -5,7 +5,8 @@ TweenService is a service in Roblox that allows you to create smooth animations 
 
 -- Step 1: Accessing TweenService 
 -- Before you start using TweenService, you need add it into your modulescript ( Located in replicatedstorage )
-local TweenService = game:GetService("TweenService") 
+```lua
+local TweenService = game:GetService("TweenService") ```
 
 -- local TweenService declares a local variables named TweenService
 -- game:GetService("TweenService") game is a global variable that represents the entire Roblox game environment. It provides access to all services and objects in your game.
@@ -50,6 +51,7 @@ With TweenService, you can create smooth animations in Roblox to enhance the use
 ### Step 4: Write Your Script in roblox studio ]]--
 
 -- Access TweenService
+```lua
 local TweenService = game:GetService("TweenService")
 
 -- Example 1: Moving an Object
@@ -80,3 +82,13 @@ local goal2 = {
 }
 local tween2 = TweenService:Create(part2, tweenInfo2, goal2)
 tween2:Play()
+```
+
+--Handling Tween Events
+--You can listen for events to know when the tween has finished:
+```lua
+tween.Completed:Connect(function(status)
+    if status == Enum.PlaybackState.Completed then
+        print("Tween completed successfully!")
+    end
+end) ```
